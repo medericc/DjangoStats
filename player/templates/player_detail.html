@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ player.name }} {{ player.forename }}</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+
+</head>
+<body class="bg-gray-100 text-gray-800 p-6">
+
+    <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-4xl font-bold text-center text-gray-900 mb-4">{{ player.forename }} {{ player.name }}</h1>
+        <p class="text-center text-xl text-gray-700 mb-8">{{ player.team }}</p>
+        
+        <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2 mb-4">Statistiques Globales</h2>
+        <div class="space-y-2">
+            <p class="flex justify-between"><span>Points:</span> <span>{{ player.total_points }}</span></p>
+            <p class="flex justify-between"><span>Assists:</span> <span>{{ player.total_assists }}</span></p>
+            <p class="flex justify-between"><span>Rebounds:</span> <span>{{ player.total_rebounds }}</span></p>
+            <p class="flex justify-between"><span>Steals:</span> <span>{{ player.total_steals }}</span></p>
+            <p class="flex justify-between"><span>Blocks:</span> <span>{{ player.total_blocks }}</span></p>
+            <p class="flex justify-between"><span>Turnovers:</span> <span>{{ player.total_turnovers }}</span></p>
+            <p class="flex justify-between"><span>Efficiency:</span> <span>{{ player.total_efficiency }}</span></p>
+            <p class="flex justify-between"><span>Minutes Jouées:</span> <span>{{ player.total_minutes }}</span></p>
+            <p class="flex justify-between"><span>3-Points Tentés:</span> <span>{{ player.total_threes }}</span></p>
+            <p class="flex justify-between"><span>3-Points Tirés:</span> <span>{{ player.total_threes_made }}</span></p>
+            <p class="flex justify-between"><span>2-Points Tentés:</span> <span>{{ player.total_twos }}</span></p>
+            <p class="flex justify-between"><span>2-Points Tirés:</span> <span>{{ player.total_twos_made }}</span></p>
+            <p class="flex justify-between"><span>Lancers Francs Tentés:</span> <span>{{ player.total_ones }}</span></p>
+            <p class="flex justify-between"><span>Lancers Francs Tirés:</span> <span>{{ player.total_ones_made }}</span></p>
+            <p class="flex justify-between"><span>More One:</span> <span>{{ player.total_more_one }}</span></p>
+        </div>
+
+        <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2 mt-8 mb-4">Moyennes par Match</h2>
+        <div class="space-y-2">
+            <p class="flex justify-between"><span>Points:</span> <span>{{ player.average_points }}</span></p>
+            <p class="flex justify-between"><span>Assists:</span> <span>{{ player.average_assists }}</span></p>
+            <p class="flex justify-between"><span>Rebounds:</span> <span>{{ player.average_rebounds }}</span></p>
+            <p class="flex justify-between"><span>Steals:</span> <span>{{ player.average_steals }}</span></p>
+            <p class="flex justify-between"><span>Blocks:</span> <span>{{ player.average_blocks }}</span></p>
+            <p class="flex justify-between"><span>Turnovers:</span> <span>{{ player.average_turnovers }}</span></p>
+            <p class="flex justify-between"><span>Efficiency:</span> <span>{{ player.average_efficiency }}</span></p>
+            <p class="flex justify-between"><span>Minutes Jouées:</span> <span>{{ player.average_minutes }}</span></p>
+            <p class="flex justify-between"><span>3-Points Stats:</span> <span>{{ player.average_threes }} %</span></p>
+            <p class="flex justify-between"><span>2-Points Stats:</span> <span>{{ player.average_twos }} %</span></p>
+            <p class="flex justify-between"><span>Lancers Francs Stats:</span> <span>{{ player.average_ones }} %</span></p>
+        </div>
+
+        <a href="{% url 'home' %}" class="block mt-8 text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+            Retour à la liste des joueurs
+        </a>
+    </div>
+
+</body>
+</html>
